@@ -48,24 +48,25 @@ class TiketTerusan extends Tiket {
     
     /**
      * Implementasi abstract method hitungTotalHarga()
-     * (Isi logika perhitungan di Tahap 5)
+     * Menghitung harga dengan tambahan biaya flat paket wahana
+     * Total Harga = harga_dasar + Rp50.000
      * 
-     * @return float
+     * @return float - Total harga dengan biaya paket wahana
      */
     public function hitungTotalHarga() {
-        // TODO: Implementasi logika perhitungan harga untuk tiket terusan
-        return 0;
+        // Harga dasar ditambah biaya flat paket wahana sebesar Rp50.000
+        return $this->harga_dasar + 50000;
     }
 
 
     /**
      * Implementasi abstract method tampilkanInformasiTiket()
-     * (Isi logika tampilan di Tahap 5)
+     * Menampilkan nama paket wahana yang termasuk dalam tiket
      * 
-     * @return void
+     * @return string - Nama paket wahana
      */
     public function tampilkanInformasiTiket() {
-        // TODO: Implementasi logika tampilan informasi tiket terusan
+        return $this->paket_wahana;
     }
 
 

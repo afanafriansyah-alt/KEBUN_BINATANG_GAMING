@@ -58,24 +58,25 @@ class TiketSafari extends Tiket {
     
     /**
      * Implementasi abstract method hitungTotalHarga()
-     * (Isi logika perhitungan di Tahap 5)
+     * Menghitung harga dengan surcharge 50% untuk tiket safari internasional
+     * Total Harga = harga_dasar × 1.5
      * 
-     * @return float
+     * @return float - Total harga dengan surcharge 50%
      */
     public function hitungTotalHarga() {
-        // TODO: Implementasi logika perhitungan harga untuk tiket safari
-        return 0;
+        // Harga dasar dikali 1.5 (ada surcharge 50%)
+        return $this->harga_dasar * 1.5;
     }
 
 
     /**
      * Implementasi abstract method tampilkanInformasiTiket()
-     * (Isi logika tampilan di Tahap 5)
+     * Menampilkan informasi asal negara dan nomor paspor pengunjung safari
      * 
-     * @return void
+     * @return string - Informasi asal negara dan nomor paspor
      */
     public function tampilkanInformasiTiket() {
-        // TODO: Implementasi logika tampilan informasi tiket safari
+        return "Asal: " . $this->asal_negara . ", Paspor: " . $this->nomor_paspor;
     }
 
 

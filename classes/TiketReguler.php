@@ -48,24 +48,35 @@ class TiketReguler extends Tiket {
     
     /**
      * Implementasi abstract method hitungTotalHarga()
-     * (Isi logika perhitungan di Tahap 5)
+     * Menghitung harga dengan logika diskon member
+     * Jika member (status_member = 1), berikan diskon 10%
+     * Jika bukan member (status_member = 0), harga tetap
      * 
-     * @return float
+     * @return float - Total harga setelah diskon
      */
     public function hitungTotalHarga() {
-        // TODO: Implementasi logika perhitungan harga untuk tiket reguler
-        return 0;
+        // Jika status member bernilai 1 (true), berikan diskon 10%
+        if ($this->status_member == 1) {
+            return $this->harga_dasar * 0.9;  // Diskon 10%
+        } else {
+            // Jika bukan member, harga tetap
+            return $this->harga_dasar;
+        }
     }
 
 
     /**
      * Implementasi abstract method tampilkanInformasiTiket()
-     * (Isi logika tampilan di Tahap 5)
+     * Menampilkan informasi status membership pengunjung
      * 
-     * @return void
+     * @return string - Status member dengan keterangan diskon jika ada
      */
     public function tampilkanInformasiTiket() {
-        // TODO: Implementasi logika tampilan informasi tiket reguler
+        if ($this->status_member == 1) {
+            return "Member (Diskon 10%)";
+        } else {
+            return "Bukan Member";
+        }
     }
 
 
